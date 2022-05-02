@@ -1,0 +1,40 @@
+.header__container {
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    height: 200vh;
+    width: 100%;
+    object-fit: cover;
+    margin-right: 200px;
+    top: 0;
+    overflow: hidden;
+    background-image: url('https://img2.storyblok.com/1920x2716/filters:format(webp):quality(70)/f/133769/3000x4243/d3431d848d/exo-ape-hero.jpg');
+}
+
+.header__title {
+    position: absolute;
+    left: 120px;
+    top:700px;
+}
+.header__paragraph {
+    position: absolute;
+    color: white;
+    left: 120px;
+    top:500px;
+    font-size: 3vh;
+
+}
+
+.container__img {
+    background-image: url('https://img2.storyblok.com/1920x2716/filters:format(webp):quality(70)/f/133769/3000x4243/d3431d848d/exo-ape-hero.jpg');
+
+}
+
+.text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+  }
+  
