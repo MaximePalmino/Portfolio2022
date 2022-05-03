@@ -14,9 +14,19 @@
 }
 
 .header__title {
+    span {
+        font-weight:100;
+        font-size: 40vh;
+
+    }
     position: absolute;
-    left: 120px;
-    top:700px;
+    left: 130px;
+    top: 40%;
+    width: 100vw;
+    font-size: 20px;
+    line-height: 2.3em;
+    font-weight:200;
+
 }
 .header__paragraph {
     position: absolute;
@@ -24,6 +34,7 @@
     left: 120px;
     top:500px;
     font-size: 3vh;
+    font-weight: 100;
 
 }
 
@@ -35,6 +46,6 @@
 .text {
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 40%;
   }
   
