@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "hooks/useRefScroll.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "hooks/useRefScroll.js", "components/Box.js"],
   "exclude": ["node_modules"]
 }

@@ -7,6 +7,7 @@ const Loader: React.FC = () => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const [isOpenBackground, setIsOpenBackground] = useState<boolean>(false)
+    const [titleFade, setTitleFade] = useState<boolean>(false)
 
     useEffect(() => {
         setTimeout(() => {
@@ -14,8 +15,9 @@ const Loader: React.FC = () => {
         }, 2500)
         setTimeout(() => {
             setIsOpenBackground(true)
+            setTitleFade(true)
         }, 2900)
-    }, [isOpen, isOpenBackground])
+    }, [isOpen, isOpenBackground, titleFade])
 
     const title = {
         hidden: {
@@ -64,18 +66,17 @@ const Loader: React.FC = () => {
       
     return (
         <>
+        <motion.div className={styles.container}  data-isOpenBackground={isOpenBackground}>
 
-        <motion.div className={styles.container}  data-isOpenBackground={isOpenBackground}
->
             <motion.h1 
+            className={styles.title}
             variants={title}
             animate="visible"
             initial="hidden"
-            data-isOpen={isOpen}
-            >Maxime  Palmino</motion.h1>
+            data-titleFade={titleFade}
+            >Loading</motion.h1>
            <motion.div 
-                  data-isOpen={isOpen}
-
+            data-isOpen={isOpen}
             variants={replace}
             animate="visible"
             initial="hidden"

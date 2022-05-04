@@ -9,8 +9,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     setTimeout(() => {
-      // setIsLoading(true)
-    }, 6000)
+      setIsLoading(true)
+    }, 3800)
   },[isLoading])
 
   return (

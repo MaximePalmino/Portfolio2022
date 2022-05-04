@@ -1,58 +1,67 @@
-.header__container {
-    position: relative;
+.header {
+// background-image: url("https://brainboxai.com/assets/images/placeholders/home-hero-2.jpg");
+// object-fit: fit !important;
+    // transition: transform 5s cubic-bezier(0.04, 1.15, 0.4, 0.99);    // background-color: rgb(255, 255, 255) !important;
+    width: 100%;
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+position: relative;
+
+
+}   
+.titles{
+    // position: absolute;
+    font-size: 15vh;
+    z-index: 9999 !important;
+    font-weight: 100;
+    color:white;
+}
+.img {
+    z-index: 1 !important;
+
+    position: absolute;
+    // background-color: black;
+    background-image: url("https://images.unsplash.com/photo-1651501280196-7b190fcfb654?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+    object-fit: cover;
+    height: 500px;
+    width: 300px;
+
+}
+.imgLeft {
+    z-index: 1 !important;
+    left: 150px;
+    top: 300px;
+    position: absolute;
+    // background-color: black;
+    background-image: url("https://images.unsplash.com/photo-1651519643430-915ba6af52a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+    object-fit: cover;
+    height: 500px;
+    width: 300px;
+}
+.imgRight {
+    z-index: 1 !important;
+    right: 150px;
+    // top: 100px;
+    position:absolute;
+    // background-color: black;
+    background-image: url("https://images.unsplash.com/photo-1651534128201-2006fec071b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+    object-fit: cover;
+    height: 500px;
+    width: 300px;
+}
+// .transitions {
+//     position: absolute;
+//     width: 100%;
+//     height: 100vh;
+//     background-color: white;
+// }
+
+.container {
+    height: 200vh;
     background-color: #aea2829c;
 
 }
-
-.container {
-    position: absolute;
-    height: 200vh;
-    width: 100%;
-    object-fit: cover;
-    margin-right: 200px;
-    top: 0;
-    overflow: hidden;
-    background-image: url('https://img2.storyblok.com/1920x2716/filters:format(webp):quality(70)/f/133769/3000x4243/d3431d848d/exo-ape-hero.jpg');
-}
-
-.header__title {
-    
-        position: absolute;
-        left: 130px;
-        top: 30%;
-        width: 100vw;
-        font-size: 10vh;
-        line-height: 100px;
-        font-weight:200;
-    
-
-
-}
-.header__paragraph {
-    position: absolute;
-    color: white;
-    left: 120px;
-    top:200px;
-    font-size: 3vh;
-    font-weight: 100;
-
-}
-
-.container__img {
-    display:flex;
-    justify-content: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    object-fit: contain;
-    width: 100vw !important;
-    height: auto;
-    background-image: url('https://images.unsplash.com/photo-1651535602931-74144887e487?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80');
-
-}
-
-.text {
-    position: fixed;
-    top: 50%;
-    left: 36%;
-  }
-  

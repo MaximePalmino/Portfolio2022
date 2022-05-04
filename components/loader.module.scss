@@ -5,26 +5,30 @@
     justify-content: center;
     align-items: center;
     color:#aea282;
-
+    opacity: 1;
     background-color: #aea2829c;
     transition: background-color .4s  ease-out;
-    h1{
+
+    .title{
         font-weight: 100;
         letter-spacing: 0.4rem;
         font-size: 1.2em;
         z-index: 9999;
+        opacity: 1;
         color:#7a725c !important;
-
+        transition: opacity .2s  ease-out;
+    
     }
-    // .test[data-isOpen="true"] {
-    //     // letter-spacing:1rem;
-    //     font-size: 30vh;
-    //    }
+    .title[data-titleFade="true"] {
+       opacity: 0 !important
+    }
 }
+
 .container[data-isOpenBackground="true"] {
-    background-color: #ffffff;
+    background-color: #aea2829c;
 
 }
+
 .img {
     position: absolute;
     object-fit: container;
@@ -38,7 +42,7 @@ background-color: #aea2829c;
     position: absolute;
     object-fit: container;
     height: 1px;
-    width: 250px;
+    width: 130px;
 background-color: #7a725c ;
 transition: width 0.8s ease-in-out;
 
