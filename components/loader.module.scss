@@ -6,7 +6,7 @@
     align-items: center;
     color:#aea282;
     opacity: 1;
-    background-color: #aea2829c;
+    background-color: black;
     transition: background-color .4s  ease-out;
 
     .title{
@@ -24,10 +24,10 @@
     }
 }
 
-.container[data-isOpenBackground="true"] {
-    background-color: #aea2829c;
+// .container[data-isOpenBackground="true"] {
+//     background-color: #aea2829c;
 
-}
+// }
 
 .img {
     position: absolute;

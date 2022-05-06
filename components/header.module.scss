@@ -1,67 +1,73 @@
 .header {
-// background-image: url("https://brainboxai.com/assets/images/placeholders/home-hero-2.jpg");
-// object-fit: fit !important;
-    // transition: transform 5s cubic-bezier(0.04, 1.15, 0.4, 0.99);    // background-color: rgb(255, 255, 255) !important;
-    width: 100%;
-    min-height: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-position: relative;
-
-
-}   
-.titles{
-    // position: absolute;
-    font-size: 15vh;
-    z-index: 9999 !important;
-    font-weight: 100;
-    color:white;
+    position: relative;
+    height: 220vh;
+    color: white;
+    background-color: black;
+    overflow: hidden;
 }
-.img {
-    z-index: 1 !important;
-
-    position: fixed;
-    // background-color: black;
-    background-image: url("https://images.unsplash.com/photo-1651501280196-7b190fcfb654?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
-    object-fit: cover;
-    height: 500px;
-    width: 300px;
-
-}
-.imgLeft {
-    z-index: 1 !important;
-    left: 150px;
-    top: 300px;
-    position: absolute;
-    // background-color: black;
-    background-image: url("https://images.unsplash.com/photo-1651519643430-915ba6af52a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
-    object-fit: cover;
-    height: 500px;
-    width: 300px;
-}
-.imgRight {
-    z-index: 1 !important;
-    right: 150px;
-    // top: 100px;
-    position:absolute;
-    // background-color: black;
-    background-image: url("https://images.unsplash.com/photo-1651534128201-2006fec071b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
-    object-fit: cover;
-    height: 500px;
-    width: 300px;
-}
-// .transitions {
-//     position: absolute;
-//     width: 100%;
-//     height: 100vh;
-//     background-color: white;
-// }
 
 .container {
-    height: 200vh;
-    background-color: #aea2829c;
+    position: relative;
+    margin: 0 8.33333vw;
+    z-index: 9999;
+
+    .textFirst {
+        width: 50%;
+        margin-top: 55vh;
+        display: flex;
+        flex-direction: column;
+        .paragraph {
+            margin-bottom: 10vh;
+        }
+        p {
+            font-size: 1.4vw;
+            font-weight: 100;
+    
+        }
+    }
+        .titles {
+            margin-top: 20px;
+            font-size: 15vw;
+            font-weight: 500;
+            line-height: 10rem;
+        }
+    .textSecond {
+        display: flex;
+        margin-top: 12em;
+        justify-content: space-between;
+        .description {
+            width: 40%;
+        }
+        .info {
+            p{
+                font-size: 1vw;
+                line-height: 2em;
+
+            }
+        }
+        p {
+            font-size: 1.4vw;
+            font-weight: 100;
+        }
+    }
+}
+
+.background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top:0;
+    overflow: hidden;
+    pointer-events: all;
 
 }
+
+.img {
+    width: 100%;
+height: 100%;
+    object-fit: cover;
+}
+
+
+

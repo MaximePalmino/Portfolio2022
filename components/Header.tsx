@@ -1,184 +1,74 @@
 import styles from './header.module.scss'
-import { motion, useViewportScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
-// import { useRef, useEffect, useState } from 'react';
 import { useEffect, useRef } from 'react';
-import Box from '../components/Box';
-import Nav from './Nav';
-
+import { gsap } from "gsap";
+import image from "../assets/img/DSC02459-6.jpg"
 const Header: React.FC = () => {
 
-  const { scrollY, scrollYProgress } = useViewportScroll();
-  const left = useTransform(scrollYProgress, [0, 0.7], [150, 600]);
-  const right = useTransform(scrollYProgress, [0, 0.7], [150, 600]);
-  const scale = useTransform(scrollYProgress, [0, 0.7], [1, 2]);
-  const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
-  // const background = useTransform(
-  //   scrollYProgress,
-  //   [0, 1],
-  //   ["#aea2829c", "rgb(0, 0, 0)"]
-  // )
-  let top = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [230, 800]
-  )
- const bottom = useTransform(
-  scrollYProgress,
-  [0, 1],
-  [200, 150]
- )
-  const textIntro = {
-    hidden: {
-      // transform: "translate3d(0px, -100%, 0px)",
-      y:10,
-      x: -60,
-      opacity:0,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-    visible: {
-      y: 0,
-      // transform: "translate3d(0px, -7%, 0px)",
-      x:0,
-      opacity:1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.3,
-        duration:.4, ease: 'easeOut'
-      },
-    },
-  }
-  const textIntroSec = {
-    hidden: {
-      y: -30,
-      x: 60,
-      opacity:0,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-    visible: {
-      y: -50,
-      x: 0,
-      opacity:1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.3,
-        duration:.4, delay:.1, ease: 'easeOut'
-      },
-    },
-  }
-  const imgHeader = {
-    hidden: {
-      y:30,
-      opacity:0,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-    visible: {
-      y: 0,
-      opacity:1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.3,
-        duration:.6, delay:.3, ease: 'easeOut'
-      },
-    },
-  }
-  const imgHeaderLeft = {
-    hidden: {
-      y:30,
-      opacity:0,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-    visible: {
-      y: 0,
-      opacity:1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.3,
-        duration:.6, delay:.2, ease: 'easeOut'
-      },
-    },
-  }
-  const imgHeaderRight = {
-    hidden: {
-      y:30,
-      opacity:0,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-    visible: {
-      y: 0,
-      opacity:1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.3,
-        duration:.6, delay:.4, ease: 'easeOut'
-      },
-    },
-  }
+
+  const boxRef = useRef<any>();
+  const textRef = useRef<any>()
+  const titleRef = useRef<any>()
+  const containerRef = useRef<any>(null)
+
+
+  useEffect(() => {
+  
+ /* @ts-ignore */
+    import("locomotive-scroll").then(locomotiveModule => {
+      const scroll = new locomotiveModule.default({
+        el: containerRef.current,
+        smooth: true,
+      })
+    })
+    
+    gsap.fromTo(boxRef.current, { y: "700", scale:'1.3', opacity:"0", rotation: "5"}, {y: "0",rotation: "0",scale:'1', opacity: "1", duration: "1", ease:"power4.out"});
+    gsap.fromTo(textRef.current, { opacity:"0", y: "40"}, { y: "0", opacity: "1", duration: "1", ease:"power4.out", delay:".4"});
+    gsap.fromTo(titleRef.current, { opacity:"0", y: "80", rotation: "1.5"}, { y:"0", opacity: "1", rotation: "0", duration: "1.2", ease:"power4.out", delay:".6"});
+
+  }, []);
 
     return (
-      <>
+      <div ref={containerRef}  data-scroll-container  >
+        <header className={styles.header} >
+          <div className={styles.container} data-scroll-section>
+            <div className={styles.textFirst}  >
+              <div className={styles.paragraph} ref={textRef} data-scroll data-scroll-speed="1">
+                <p > Intrigued by beauty, fascinated by technology </p>
+                <p>and fuelled with an everlasting devotion to digital </p>
+                <p>craftsmanship and meaningful aesthetics. </p>
+              </div>
+            </div>
+              <h1  id="ud" ref={titleRef} className={styles.titles} data-scroll data-scroll-speed="1">Digital</h1>
+              <h1 className={styles.titles} data-scroll data-scroll-speed="2" >Design</h1>
+              <h1 className={styles.titles} data-scroll data-scroll-speed="3" >Experience</h1>
+              <div className={styles.textSecond}>
+                <div className={styles.description}>
+                 <p data-scroll data-scroll-speed="2" >White-glove digital experiences, engaging content and impactful design solutions that inspire, affect and delight. We carefully wrap emotionally rich aesthetics around strategic concepts to deliver award-winning digital design that exceeds expectations.</p>
+                </div>
+                <div data-scroll data-scroll-speed="2"  className={styles.info}>
+                  <p>maximepalmino.pro@gmail.com</p>
+                  <p>07 67 88 45 02</p>
+                </div>
 
-      <div className={styles.container}>
-        <motion.header className={styles.header}>
-          {/* <Nav /> */}
-          <motion.h1 
-          className={styles.titles}
-            variants={textIntro}
-            animate="visible"
-            initial="hidden"
-          >Front-end Developer <br/>
-          </motion.h1>
-          <motion.h1
-          className={styles.titles}
-            variants={textIntroSec}
-            animate="visible"
-            initial="hidden"
-        >
-            Based in Paris
-      </motion.h1>
-      <motion.div
-           variants={imgHeader}
-           animate="visible"
-           initial="hidden"     
-           style={{bottom}}
-           whileHover={{ transform: "skew(15deg, 15deg)" }}
+              </div>
 
-      className={styles.img}></motion.div>
-      <motion.div           style={{ top, left}}
+          </div>
+          <div className={styles.background} data-scroll-section >
+           <img ref={boxRef}  className={styles.img} src={image.src} alt="" />
+           {/* <img ref={boxRef}  className={styles.img} src="https://images.unsplash.com/photo-1481437642641-2f0ae875f836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="" /> */}
+           {/* <img ref={boxRef}  className={styles.img} src="https://images.unsplash.com/photo-1651546909228-2f33515c2e89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="" /> */}
+           {/* <img ref={boxRef}  className={styles.img} src="https://images.unsplash.com/photo-1651762971888-64dadfa959be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" alt="" /> */}
+           {/* <img ref={boxRef}  className={styles.img} src="https://images.unsplash.com/photo-1651440391743-ef05664bbc93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" alt="" /> */}
 
-           variants={imgHeaderLeft}
-           animate="visible"
-           initial="hidden"     
-      className={styles.imgLeft}></motion.div>
-      <motion.div           style={{ top, right }}
+          </div>
 
-           variants={imgHeaderRight}
-           animate="visible"
-           initial="hidden"     
-      className={styles.imgRight}></motion.div>
-        </motion.header>
-        {/* <section style={{height: "100vh", backgroundColor:"white", zIndex:9999}}>
-          <h1>Ho</h1>
-        </section>
-        <section>
-          <h1>Ho</h1>
-        </section>
-        <section>
-          <h1>Ho</h1>
-        </section> */}
 
-        </div>
-        </>
+
+        </header>
+
+      </div>
     )
 }
+
 
 export default Header
