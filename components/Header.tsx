@@ -5,8 +5,8 @@ import { useEffect, useRef } from 'react';
 import Box from '../components/Box';
 import Nav from './Nav';
 
-
 const Header: React.FC = () => {
+
   const { scrollY, scrollYProgress } = useViewportScroll();
   const left = useTransform(scrollYProgress, [0, 0.7], [150, 600]);
   const right = useTransform(scrollYProgress, [0, 0.7], [150, 600]);
@@ -25,7 +25,7 @@ const Header: React.FC = () => {
  const bottom = useTransform(
   scrollYProgress,
   [0, 1],
-  [200, -200]
+  [200, 150]
  )
   const textIntro = {
     hidden: {
@@ -126,6 +126,16 @@ const Header: React.FC = () => {
 
     return (
       <>
+      <div data-scroll-container>
+    <div data-scroll-section>
+        <h1 data-scroll>Hey</h1>
+        <p data-scroll>👋</p>
+    </div>
+    <div data-scroll-section>
+        <h2 data-scroll data-scroll-speed="1">What's up?</h2>
+        <p data-scroll data-scroll-speed="2">😬</p>
+    </div>
+</div>
       <div className={styles.container}>
         <motion.header className={styles.header}>
           {/* <Nav /> */}
