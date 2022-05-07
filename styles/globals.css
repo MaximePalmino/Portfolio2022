@@ -11,7 +11,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+body {
+  background-color: black;
 
+}
 /*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
 html.has-scroll-smooth {
   overflow: hidden; }

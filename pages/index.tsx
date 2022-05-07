@@ -5,19 +5,18 @@ import Nav from '../components/Nav'
 import Works from '../components/Works'
 const Home: NextPage = () => {
 
+
   const containerRef = useRef<any>()
 
 
-
   useEffect(() => {
- /* @ts-ignore */
-    import("locomotive-scroll").then(locomotiveModule => {
+     /* @ts-ignore */
+     import("locomotive-scroll").then(locomotiveModule => {
       const scroll = new locomotiveModule.default({
         el: containerRef.current,
         smooth: true,
       })
     })
-
   }, [])
 
 

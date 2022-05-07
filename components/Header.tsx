@@ -2,6 +2,9 @@ import styles from './header.module.scss'
 import { useEffect, useRef } from 'react';
 import { gsap } from "gsap";
 import image from "../assets/img/DSC02459-6.jpg"
+import Works from './Works';
+
+
 const Header: React.FC = () => {
 
 
@@ -21,18 +24,12 @@ const Header: React.FC = () => {
     gsap.fromTo(titleRef1.current, { opacity: 0 , y: 80, rotation: "1.5"}, { y: 0, opacity: 1, rotation: 0, duration: 1.2, ease:"power4.out", delay: .6});
     gsap.fromTo(titleRef2.current, { opacity: 0 , y: 80, rotation: "1.5"}, { y: 0, opacity: 1, rotation: 0, duration: 1.2, ease:"power4.out", delay: .6});
 
- /* @ts-ignore */
-    import("locomotive-scroll").then(locomotiveModule => {
-      const scroll = new locomotiveModule.default({
-        el: containerRef.current,
-        smooth: true,
-      })
-    })
+
 
   }, []);
 
     return (
-      <div ref={containerRef}  data-scroll-container  >
+      <div ref={containerRef}   data-scroll-container  >
         <header className={styles.header} >
           <div className={styles.container}  data-scroll-section>
             <div className={styles.textFirst}  >
@@ -57,9 +54,12 @@ const Header: React.FC = () => {
                 </div>
 
               </div>
+              
           </div>
 
-          <div className={styles.background} data-scroll-section >
+
+        </header>
+        <div className={styles.background} data-scroll-section >
            <img ref={boxRef}  className={styles.img} src={image.src} alt="" />
            {/* <img ref={boxRef}  className={styles.img} src="https://images.unsplash.com/photo-1481437642641-2f0ae875f836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="" /> */}
            {/* <img ref={boxRef}  className={styles.img} src="https://images.unsplash.com/photo-1651546909228-2f33515c2e89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="" /> */}
@@ -68,8 +68,6 @@ const Header: React.FC = () => {
 
           </div>
 
-
-        </header>
       </div>
     )
 }
