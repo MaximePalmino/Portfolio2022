@@ -2,13 +2,13 @@ import type { NextPage } from 'next'
 import { useEffect, useRef } from 'react'
 import Header from '../components/Header'
 import Nav from '../components/Nav'
-
+import Works from '../components/Works'
 const Home: NextPage = () => {
 
   const containerRef = useRef<any>()
 
 
-  
+
   useEffect(() => {
  /* @ts-ignore */
     import("locomotive-scroll").then(locomotiveModule => {
@@ -25,6 +25,7 @@ const Home: NextPage = () => {
     <div ref={containerRef}>
       {/* <Nav /> */}
       <Header />
+      {/* <Works /> */}
     </div>
   )
 }
