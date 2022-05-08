@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import { useEffect, useState, useRef } from 'react'
 import Works from '../components/Works'
 
+
 function MyApp({ Component, pageProps }: AppProps) {
 
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     setTimeout(() => {
       setIsLoading(true)
+
     }, 3800)
 
 
@@ -39,6 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 // }, [Component]);
 
   return (
+
     <>
         {isLoading ? (<Component {...pageProps}  />) : <Loader />}
     </>

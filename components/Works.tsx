@@ -5,17 +5,27 @@ import { useRef, useEffect } from "react";
 
 const Works = () => {
 
-    const headerRef = useRef<any>()
-    useEffect(() => {
+    const titleRef2 = useRef(null)
 
-        gsap.to(headerRef.current, { backgroundColor: "pink", duration: 1,  ease: 'none' });
-    
-      });
-    
+    const headerRef = useRef<any>()
+
+//       useEffect(() => {
+//     gsap.to(titleRef2.current, {
+//       x: 100,
+//       duration: 5,
+//       scrollTrigger: {
+//         trigger: titleRef2.current,
+//         markers: true,
+//         start: "top center",
+//         end: "bottom 80px",
+//         scrub: true
+//       }
+//     });
+//   }, []);
     return (
     
         <section ref={headerRef} className={styles.container}>
-            <h2>Nope</h2>
+                  <h1 ref={titleRef2} style={{color: "white"}} id="thirdCircle">hhhhh</h1>
             <h1>Hey</h1>
             <h1>Hey</h1>
             <h1>Hey</h1>
