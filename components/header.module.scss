@@ -1,8 +1,8 @@
 .header {
     position: relative;
-    height: 190vh;
-    color: white;
+    color: #fec819;
     overflow-y: hidden;
+    height: 200vh;
 
 }
 
@@ -63,13 +63,14 @@
     top:0;
     // overflow: hidden;
     // pointer-events: all;
+    margin: 0 4.33333vw;
 
 }
 
 .img {
     width: 100%;
-    height: 185vh;
-    object-fit: cover;
+    // height: 200%;
+    // object-fit: contain;
 }
 
 

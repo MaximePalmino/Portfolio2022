@@ -22,7 +22,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
 
-    gsap.fromTo(boxRef.current, { y: "700", scale:'1.3', opacity:"0", rotation: "5"}, {y: "0",rotation: "0",scale:'1', opacity: "1", duration: "1", ease:"power4.out", delay: '.2'});
+    gsap.fromTo(boxRef.current, { y: "700", scale:'1.6', opacity:"0", rotation: "5"}, {y: "0",rotation: "0",scale:'1', opacity: "1", duration: "1", ease:"power4.out", delay: '.2'});
     gsap.fromTo(textRef.current, { opacity: 0, y: 40}, { y: "0", opacity: "1", duration: "1", ease:"power4.out", delay:".4"});
     gsap.fromTo(titleRef.current, { opacity: 0 , y: 80, rotation: "1.5"}, { y: 0, opacity: 1, rotation: 0, duration: 1.2, ease:"power4.out", delay: .6});
     gsap.fromTo(titleRef1.current, { opacity: 0 , y: 80, rotation: "1.5"}, { y: 0, opacity: 1, rotation: 0, duration: 1.2, ease:"power4.out", delay: .6});
@@ -32,13 +32,17 @@ const Header: React.FC = () => {
 
     setTimeout(() => {
       gsap.to(headerRef.current, {
-        y: -600,
+        y: "-30%",
+        ease: "power4.out",
+
         scrollTrigger: {
           trigger: headerRef.current,
+      
           markers: true,
           start: "top center",
-            end: "bottom top",
-          scrub: true
+          end: "bottom top",
+          scrub: 0.8,
+
         }
       });
     }, 600)
@@ -92,12 +96,7 @@ const Header: React.FC = () => {
            {/* <img ref={boxRef}  className={styles.img} src="https://images.unsplash.com/photo-1651440391743-ef05664bbc93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" alt="" /> */}
 
           </div>
-          <h1>hhhhh</h1>
-          <h1>hhhhh</h1>
-          <h1>hhhhh</h1>
-          <h1>hhhhh</h1>
-          <h1>hhhhh</h1>
-          <h1>hhhhh</h1>
+
       </div>
     )
 }

@@ -8,23 +8,17 @@ import { gsap } from "gsap";
 // import { gsap } from "gsap/dist/gsap";
 
 const Home: NextPage = () => {
-  
+
 gsap.registerPlugin(ScrollTrigger);
 
 
-  const containerRef = useRef<any>()
 
 
   return (
     <>
         <Header />    
         <Works />
-        <Works />
-        <Works />
-        <Works />
-        <Works />
-        <Works />
-        <Works />
+
     </>
   )
 }

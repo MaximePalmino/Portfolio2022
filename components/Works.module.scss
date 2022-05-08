@@ -1,6 +1,26 @@
 .container {
     z-index:9999;
-    height: 400vh ;
-    background-color: white;
+    height: 100vh ;
+    background-color: #ffffff;
+    flex-direction: column;
     width: 100%;
+    color: rgb(0, 0, 0);
+    div {
+        h1 {
+            font-size: 8vw;
+
+        }
+        p {
+            font-size: 2vw;
+        }
+    }
+    // margin: 0 8.33333vw;
+font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+
+
 }

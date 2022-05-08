@@ -5,35 +5,35 @@ import { useRef, useEffect } from "react";
 
 const Works = () => {
 
-    const titleRef2 = useRef(null)
+    const titleRef = useRef(null)
 
     const headerRef = useRef<any>()
 
-//       useEffect(() => {
-//     gsap.to(titleRef2.current, {
-//       x: 100,
-//       duration: 5,
-//       scrollTrigger: {
-//         trigger: titleRef2.current,
-//         markers: true,
-//         start: "top center",
-//         end: "bottom 80px",
-//         scrub: true
-//       }
-//     });
-//   }, []);
+      useEffect(() => {
+        gsap.fromTo(headerRef.current, { y: "0", opacity:"1"}, { y: "-300", scale:'1', opacity: "1", duration: "1", ease:"power4.out", delay: '.2', 
+        scrollTrigger: {
+            trigger: headerRef.current,
+            markers: true,
+            scrub: 0.8
+          }});
+        gsap.fromTo(titleRef.current, { y: "100", scale:'1', opacity:"1"}, { y: "0", scale:'1', opacity: "1", duration: "1", ease:"power4.out", delay: '.2', 
+        scrollTrigger: {
+            trigger: titleRef.current,
+            markers: true,
+            scrub: 0.8
+          }});
+
+
+  }, []);
     return (
     
         <section ref={headerRef} className={styles.container}>
-                  <h1 ref={titleRef2} style={{color: "white"}} id="thirdCircle">hhhhh</h1>
-            <h1>Hey</h1>
-            <h1>Hey</h1>
-            <h1>Hey</h1>
-            <h1>Hey</h1>
-            <h1>Hey</h1>
-            <h1>Hey</h1>
-            <h1>Hey</h1>
-            <h1>Hey</h1>
+            <div ref={titleRef}>
+            <h1 >Ton Of Love</h1>
+            {/* <p>C'est un chalumeau</p> */}
+            </div>
+
+ 
         </section>
     
     )
