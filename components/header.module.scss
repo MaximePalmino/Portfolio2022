@@ -2,7 +2,7 @@
     position: relative;
     height: 220vh;
     color: white;
-    // overflow-y: hidden;
+    overflow-y: hidden;
 
 }
 
@@ -68,8 +68,8 @@
 
 .img {
     width: 100%;
-    max-height: 220vh;
-    object-fit: cover;
+    height: 220vh;
+    object-fit:fill;
 }
 
 
