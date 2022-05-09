@@ -22,22 +22,14 @@ const Header: React.FC = () => {
 
   useEffect(() => {
 
-    gsap.fromTo(boxRef.current, { y: "700", scale:'1.6', opacity:"0", rotation: "5"}, {y: "0",rotation: "0",scale:'1', opacity: "1", duration: "1", ease:"power4.out", delay: '.2'});
-    gsap.fromTo(textRef.current, { opacity: 0, y: 40}, { y: "0", opacity: "1", duration: "1", ease:"power4.out", delay:".4"});
-    gsap.fromTo(titleRef.current, { opacity: 0 , y: 80, rotation: "1.5"}, { y: 0, opacity: 1, rotation: 0, duration: 1.2, ease:"power4.out", delay: .6});
-    gsap.fromTo(titleRef1.current, { opacity: 0 , y: 80, rotation: "1.5"}, { y: 0, opacity: 1, rotation: 0, duration: 1.2, ease:"power4.out", delay: .6});
-    gsap.fromTo(titleRef2.current, { opacity: 0 , y: 80, rotation: "1.5"}, { y: 0, opacity: 1, rotation: 0, duration: 1.2, ease:"power4.out", delay: .6});
-
-
+    gsap.fromTo(boxRef.current, { y: "700", scale:'1.6', opacity:"0", rotation: "5"}, {y: "0",rotation: "0",scale:'1', opacity: "1", duration: "1.3", ease:"power4.out", delay: '.2'});
+    gsap.fromTo(textRef.current, { opacity: 0, y: 40, rotation: "2"}, {rotation:0, y: "0", opacity: "1", duration: "1", ease:"power4.out", delay:".4"});
+    gsap.fromTo(titleRef.current, { opacity: 0 , y: 80, rotation: "2"}, { y: 0, opacity: 1, rotation: 0, duration: 1.2, ease:"power4.out", delay: .6});
 
     setTimeout(() => {
-      gsap.to(headerRef.current, {
-        y: "-30%",
-        ease: "power4.out",
-
+      gsap.to(headerRef.current, { y: "-30%", ease: "power4.out",
         scrollTrigger: {
           trigger: headerRef.current,
-      
           markers: true,
           start: "top center",
           end: "bottom top",
@@ -46,38 +38,32 @@ const Header: React.FC = () => {
         }
       });
     }, 600)
-
-
-
     
   }, []);
 
-  useEffect(() => {
 
-
-  }, []);
 
     return (
-      <div ref={containerRef} className="box">
+      <div ref={containerRef} className="box" data-scroll-container >
         <header className={styles.header} >
           <div className={styles.container} ref={headerRef}>
             <div className={styles.textFirst}  >
-              <div className={styles.paragraph} ref={textRef} >
+              <div className={styles.paragraph} ref={textRef} data-scroll-section >
                 <p> Intrigued by beauty, fascinated by technology </p>
                 <p>and fuelled with an everlasting devotion to digital </p>
                 <p>craftsmanship and meaningful aesthetics. </p>
               </div>
             </div>
-            <div  ref={titleRef} >
-                <h1 className={styles.titles} >Digital</h1>
-                <h1 className={styles.titles}>Design</h1>
-                <h1 className={styles.titles}>Experience</h1>
+            <div  ref={titleRef} data-scroll-section >
+                <h1 className={styles.titles} data-scroll data-scroll-speed="1" >Digital</h1>
+                <h1 className={styles.titles} data-scroll data-scroll-speed="1">Design</h1>
+                <h1 className={styles.titles} data-scroll data-scroll-speed="1">Experience</h1>
               </div>
-              <div className={styles.textSecond}>
-                <div className={styles.description}>
+              <div className={styles.textSecond} ref={titleRef1} data-scroll-section>
+                <div className={styles.description} data-scroll data-scroll-speed="1">
                  <p>White-glove digital experiences, engaging content and impactful design solutions that inspire, affect and delight. We carefully wrap emotionally rich aesthetics around strategic concepts to deliver award-winning digital design that exceeds expectations.</p>
                 </div>
-                <div className={styles.info} ref={titleRef2}>
+                <div className={styles.info} data-scroll data-scroll-speed="1">
                   <p>maximepalmino.pro@gmail.com</p>
                   <p>07 67 88 45 02</p>
                 </div>

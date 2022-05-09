@@ -2,12 +2,12 @@ import '../styles/globals.css'
 import Loader from '../components/Loader'
 import type { AppProps } from 'next/app'
 import { useEffect, useState, useRef } from 'react'
-import Works from '../components/Works'
-
+import { gsap } from "gsap";
 
 function MyApp({ Component, pageProps }: AppProps) {
 
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const scrollRef = useRef<any>();
 
   useEffect(() => {
 
@@ -21,30 +21,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   },[isLoading])
   
 
-//   useEffect(() => {
-//     /* @ts-ignore */
-//     let scroll: any;
-//     /* @ts-ignore */
-//     import("locomotive-scroll").then((locomotiveModule) => {
-//         scroll = new locomotiveModule.default({
-//             el: document.querySelector("[data-scroll-container]"),
-//             smooth: true,
-//             smoothMobile: false,
-//             resetNativeScroll: true
-//         });
-//     });
-//     window.dispatchEvent(new Event('resize'))
-
-//     if (scroll) {
-//       scroll.destroy();
-//     }
-// }, [Component]);
-
   return (
 
-    <>
+    <div ref={scrollRef}>
         {isLoading ? (<Component {...pageProps}  />) : <Loader />}
-    </>
+    </div>
   )
 }
 

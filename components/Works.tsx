@@ -2,41 +2,71 @@ import styles from "../components/Works.module.scss"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
-
+import image from "../assets/img/DSC02459-6.jpg"
+import Work from "./Work";
 const Works = () => {
 
-    const titleRef = useRef(null)
-
     const headerRef = useRef<any>()
+    const workTitleRef = useRef<any>()
 
-      useEffect(() => {
-        gsap.fromTo(headerRef.current, { y: "0", opacity:"1"}, { y: "-300", scale:'1', opacity: "1", duration: "1", ease:"power4.out", delay: '.2', 
-        scrollTrigger: {
-            trigger: headerRef.current,
+    const firstBox = useRef<any>()
+    const firstBox1 = useRef<any>()
+    const firstBox2 = useRef<any>()
+
+    useEffect(() => {
+
+
+        gsap.to(firstBox1.current, { y: -300, ease: "power4.out", scrollTrigger: {        
+            trigger: firstBox.current,
             markers: true,
-            scrub: 0.8
-          }});
-        gsap.fromTo(titleRef.current, { y: "100", scale:'1', opacity:"1"}, { y: "0", scale:'1', opacity: "1", duration: "1", ease:"power4.out", delay: '.2', 
-        scrollTrigger: {
-            trigger: titleRef.current,
+            scrub: 0.8,
+  }})
+        gsap.to(firstBox2.current, { y: -400, ease: "power4.out", scrollTrigger: {        
+            trigger: firstBox.current,
             markers: true,
-            scrub: 0.8
-          }});
+            scrub: 0.8,
+  }})
+ 
+        gsap.fromTo(workTitleRef.current, {x: 100, y: 80, letterSpacing: "0.25em" }, {x:0, y: 0, ease: "power4.out", letterSpacing: "-0.01em", scrollTrigger: {        
+            trigger: workTitleRef.current,
+            start: "-550px center",
+            end: "400px center",
+            markers: true,
+            scrub: 0.8,
+
+  }})
 
 
-  }, []);
+    }, [])
+
     return (
-    
-        <section ref={headerRef} className={styles.container}>
-            <div ref={titleRef}>
-            <h1 >Ton Of Love</h1>
-            {/* <p>C'est un chalumeau</p> */}
+    <>
+        <section  ref={headerRef} className={styles.container} >
+            <div className={styles.titleContainer}>
+                <h1 ref={workTitleRef}>Works</h1>
             </div>
 
- 
-        </section>
-    
+                {/* <div className={styles.firstBox} ref={firstBox}>
+                    <div className={styles.containerFirstImg}></div>
+                </div>
+                <div className={styles.secondBox} ref={firstBox1}>
+                    <div className={styles.containerSecondImg}></div>
+                </div>
+                    <div className={styles.thirdBox} ref={firstBox2}>
+                <div className={styles.containerThirdImg}></div>
+
+                </div> */}
+            </section>
+
+            <div>
+                {/* <div className={styles.sideBar}></div> */}
+                {/* <img src={image.src} /> */}
+            </div>
+  
+
+        </>
     )
 }
 
 export default Works
+
