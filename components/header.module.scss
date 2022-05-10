@@ -1,14 +1,14 @@
 .header {
     position: relative;
     color: #fec819;
-    overflow-y: hidden;
+    overflow: hidden;
     height: 200vh;
 
 }
 
 .container {
     position: relative;
-    margin: 0 8.33333vw;
+    margin: 0 10.33333vw;
     z-index: 9999;
 
     .textFirst {
@@ -25,7 +25,6 @@
     
         }
     }
-
     .titles {
         // opacity: 0;
 
@@ -69,7 +68,7 @@
 
 .img {
     width: 100%;
-    // height: 200%;
+    height: 200vh;
     object-fit: contain;
 }
 

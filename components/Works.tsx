@@ -3,7 +3,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
 import image from "../assets/img/DSC02459-6.jpg"
-import Work from "./Work";
 const Works = () => {
 
     const headerRef = useRef<any>()
@@ -27,12 +26,12 @@ const Works = () => {
             scrub: 0.8,
   }})
  
-        gsap.fromTo(workTitleRef.current, {x: 100, y: 80, letterSpacing: "0.25em" }, {x:0, y: 0, ease: "power4.out", letterSpacing: "-0.01em", scrollTrigger: {        
+        gsap.fromTo(workTitleRef.current, {x: 100, letterSpacing: "0.25em" }, {x:0, y: 0, ease: "power4.out", letterSpacing: "-0.01em", scrollTrigger: {        
             trigger: workTitleRef.current,
-            start: "-550px center",
+            start: "-700px center",
             end: "400px center",
             markers: true,
-            scrub: 0.8,
+            scrub: 1,
 
   }})
 
@@ -43,7 +42,8 @@ const Works = () => {
     <>
         <section  ref={headerRef} className={styles.container} >
             <div className={styles.titleContainer}>
-                <h1 ref={workTitleRef}>Works</h1>
+                <h1 ref={workTitleRef}>PlayGround</h1>
+
             </div>
 
                 {/* <div className={styles.firstBox} ref={firstBox}>

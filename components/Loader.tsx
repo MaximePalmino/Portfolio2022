@@ -1,4 +1,4 @@
-import styles from './loader.module.scss'
+import styles from './Loader.module.scss'
 import { motion, useViewportScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from 'react';
 

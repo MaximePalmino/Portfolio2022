@@ -4,9 +4,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color:#fec819;
+    color:#181818;
     opacity: 1;
-    background-color: #181818;
+    background: #8e93ff;
+
     transition: background-color .4s  ease-out;
 
     .title{
@@ -15,7 +16,7 @@
         font-size: 1.2em;
         z-index: 9999;
         opacity: 1;
-        color:#fec819 !important;
+        color:#181818!important;
         transition: opacity .2s  ease-out;
     
     }
@@ -34,7 +35,7 @@
     object-fit: container;
     height: 400px;
     width: 10px;
-background-color: #aea2829c;
+background-color: #181818;
 }
 
   
@@ -43,7 +44,7 @@ background-color: #aea2829c;
     object-fit: container;
     height: 1px;
     width: 130px;
-background-color: #7a725c ;
+background-color: #181818;
 transition: width 0.8s ease-in-out;
 
 }

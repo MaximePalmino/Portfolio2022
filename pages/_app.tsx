@@ -1,20 +1,17 @@
 import '../styles/globals.css'
 import Loader from '../components/Loader'
 import type { AppProps } from 'next/app'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState} from 'react'
 import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 function MyApp({ Component, pageProps }: AppProps) {
-
+  gsap.registerPlugin(ScrollTrigger);
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const scrollRef = useRef<any>();
 
   useEffect(() => {
-
-
     setTimeout(() => {
       setIsLoading(true)
-
     }, 3800)
 
 
@@ -22,10 +19,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   
 
   return (
-
-    <div ref={scrollRef}>
+    <>
         {isLoading ? (<Component {...pageProps}  />) : <Loader />}
-    </div>
+     </>
   )
 }
 
